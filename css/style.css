@@ -1,0 +1,456 @@
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@font-face {
+  font-family: Raleway;
+  src: url(../../font/Raleway-Regular.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: "Barlow Condensed";
+  src: url(../../font/BarlowCondensed-Bold.ttf);
+  font-style: normal;
+}
+html, body, .wrapper, .container, .socials, .home, .about-block, .skills-block, .education-block, .project-block {
+  height: 100%;
+}
+
+body {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Chrome/Safari/Opera */
+  /* Konqueror */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  overflow-x: hidden;
+}
+
+body, .header {
+  background-color: #222629;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #373d42;
+  border-radius: 10px;
+}
+
+body.menu-open {
+  overflow: hidden;
+}
+
+.wrapper {
+  font: 18px Raleway, sans-serif;
+}
+
+.container {
+  padding: 80px;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 0 80px 16px;
+  z-index: 999;
+}
+.header p, .header li, .header a {
+  color: #fff;
+}
+.header ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.header ul a {
+  text-decoration: none;
+  cursor: pointer;
+}
+.header ul .active, .header ul a:hover {
+  color: #87C232;
+}
+
+.menu-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 40px;
+  z-index: 999;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.menu-btn .line {
+  width: 48px;
+  height: 5px;
+  background-color: #87C232;
+  margin-bottom: 8px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  z-index: 999;
+}
+.menu-btn .line:nth-child(2) {
+  margin-left: 18px;
+}
+.menu-btn .line:nth-child(3) {
+  margin-bottom: 0;
+}
+
+.menu-btn:hover .line {
+  width: 40px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.menu-btn.active {
+  left: 20px;
+}
+.menu-btn.active .line:nth-child(1) {
+  opacity: 0;
+}
+.menu-btn.active .line:nth-child(2) {
+  margin: 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+.menu-btn.active .line:nth-child(3) {
+  margin: -5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.menu-btn.active:hover .line {
+  width: 48px;
+}
+
+.drop-menu-container {
+  height: 100%;
+  width: 100%;
+  padding: 80px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 998;
+  overflow-y: hidden;
+}
+.drop-menu-container .drop-menu {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #618930), color-stop(50%, #F5F5F5));
+  background: linear-gradient(to right, #618930 50%, #F5F5F5 50%);
+}
+.drop-menu-container .drop-menu-nav, .drop-menu-container .drop-menu-about {
+  height: 100%;
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 80px;
+}
+.drop-menu-container .drop-menu-nav li {
+  margin-bottom: 32px;
+}
+.drop-menu-container .drop-menu-nav li a {
+  color: #272822;
+  font: bold 32px "Barlow Condensed", sans-serif;
+  text-decoration: none;
+}
+.drop-menu-container .drop-menu-nav p {
+  margin: 16px 0;
+  color: #fff;
+  font: italic 18px "Raleway", sans-serif;
+}
+.drop-menu-container .drop-menu-nav span {
+  color: #272822;
+  font: bold 32px "Barlow Condensed", sans-serif;
+}
+.drop-menu-container .drop-menu-about span {
+  color: #87C232;
+  font: italic 18px "Raleway", sans-serif;
+}
+.drop-menu-container .drop-menu-about h2 {
+  font: bold 32px "Barlow Condensed", sans-serif;
+  margin-bottom: 38px;
+}
+.drop-menu-container .drop-menu-about p {
+  font: 32px/38px "Raleway", sans-serif;
+}
+
+.socials {
+  width: 80px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+.socials li {
+  width: 28px;
+  height: 28px;
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  line-height: 96px;
+  font: bold 96px/96px "Barlow Condensed", sans-serif;
+  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #618930), color-stop(50%, #F5F5F5));
+  background: linear-gradient(to right, #618930 50%, #F5F5F5 50%);
+}
+
+.about-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 160px;
+}
+.about-block span {
+  font: italic 18px/21px "Raleway", sans-serif;
+  color: #87C232;
+}
+.about-block h2 {
+  margin-bottom: 38px;
+  color: #87C232;
+  font: bold 32px "Barlow Condensed", sans-serif;
+}
+.about-block pre {
+  color: #fff;
+  font: 32px/38px "Raleway", sans-serif;
+}
+
+.skills-block {
+  padding: 80px;
+  background-color: #F5F5F5;
+}
+.skills-block h2, .skills-block .skills {
+  margin-bottom: 32px;
+}
+.skills-block h2 {
+  color: #272822;
+  font: bold 80px/96px "Barlow Condensed", sans-serif;
+}
+.skills-block .skills {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.skills-block .skills span {
+  width: 300px;
+  margin-right: 80px;
+  font: 32px/38px "Raleway", sans-serif;
+}
+.skills-block .skills .skills-percent {
+  width: 100%;
+  height: 14px;
+  margin-left: 80px;
+}
+.skills-block .skills .skills-percent .skills-progress {
+  height: 100%;
+  background-color: #618930;
+  border-radius: 7px;
+}
+
+.education-block {
+  padding: 80px;
+  background-color: #F5F5F5;
+}
+.education-block h2 {
+  color: #272822;
+  font: bold 80px/96px "Barlow Condensed", sans-serif;
+}
+.education-block .education-course, .education-block .education-university {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.education-block .education-course .education, .education-block .education-university .education {
+  margin: 80px 80px 0 0;
+}
+.education-block .education-course .education span, .education-block .education-course .education a, .education-block .education-university .education span, .education-block .education-university .education a {
+  color: #87C232;
+  font: italic 18px/21px "Raleway", sans-serif;
+}
+.education-block .education-course .education h3, .education-block .education-university .education h3 {
+  font: bold 32px "Barlow Condensed", sans-serif;
+}
+.education-block .education-course .education p, .education-block .education-university .education p {
+  font: 32px/38px "Raleway", sans-serif;
+}
+.education-block .education-course .education .certificate, .education-block .education-university .education .certificate {
+  margin-top: 45px;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.project-block {
+  padding: 80px;
+}
+.project-block h2 {
+  color: #87C232;
+  font: bold 80px "Barlow Condensed", sans-serif;
+}
+.project-block .project-list {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.project-block .project-list .project {
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  background-color: #fff;
+}
+.project-block .project-list .project:first-child {
+  background: url(../img/project/intro-project1.png)/100%;
+}
+
+.footer {
+  padding: 0 80px 80px;
+}
+.footer p {
+  color: #87C232;
+  font: italic 18px "Roboto", sans-serif;
+  margin-bottom: 20px;
+}
+.footer span {
+  color: #fff;
+  font: bold 32px "Barlow Condensed", sans-serif;
+}
+
+.hide {
+  display: none;
+}
